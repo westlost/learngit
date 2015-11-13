@@ -1,0 +1,27 @@
+﻿<html>
+	<head>
+		<title>书籍信息</title>
+	</head>
+	<body>
+git commit -m"update all file"
+[master (root-commit) 49877c4] upda
+		<center>
+		<form method = "POST">
+		<input name = "ISBN" type = "text" value = "{{book.ISBN}}">
+		<input name = "Title" type = "text" value = "{{book.Title}}">
+		作者:<select name = "AuthorID">
+		{% for author in authors %}
+		
+		<option value = {{author.AuthorID}}>{{author.Name}}</option>
+		
+		{% endfor %}
+		</select>
+		<input name = "Publisher" type = "text" value = "{{book.Publisher}}">
+		<input name = "PublishDate" type = "text" value = "{{book.PublishDate}}">
+		<input name = "Price" type = "text" value = "{{book.Price}}">
+		<input name = "update" type = "submit" 	value = "确定">
+		<a href = "/index">返回主页</a>
+		</form>
+	</center>
+	</body>
+</html>

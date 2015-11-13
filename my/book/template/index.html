@@ -1,0 +1,17 @@
+﻿<html>
+	<head>
+		<title>图书管理系统</title>
+	</head>
+	<body>
+	<center>
+		<a href = "/search">搜索作者</a>
+		<a href = "/addauthor">添加作者</a>
+		<a href = "/addbook">添加书籍</a>
+		<form method = "post">
+			{% for book in books %}
+			<li><a href = "/information/{{book.ISBN}}" >{{book.Title}}</a><button name = "delete" value = "{{book.ISBN}}">delete</button></li>
+			{% endfor %}
+		</form>
+	</center>
+	</body>
+</html>

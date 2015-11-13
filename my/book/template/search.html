@@ -1,0 +1,38 @@
+﻿<html>
+	<head>
+		<title>查询作者</title>
+	</head>
+	<body>
+	<center>
+		<a href = "/index">返回主页</a>
+		<form method = "get">
+		<input name = "name" type = "text">
+		<input type = "submit" value = "增加">
+		</form>
+		
+		{% if author %}
+		<table border = "2">
+		<tr><th>AuthorID</th><th>姓名</th><th>年龄</th><th>国籍</th></tr>
+		<tr><th>{{author.AuthorID}}</th><th>{{author.Name}}</th><th>{{author.Age}}</th><th>{{author.Country}}</th></tr>
+		</table>
+		{% endif %}
+		
+		{% if books %}
+		<table border = "2">
+		<tr><th>ISBN</th><th>书名</th><th>作者</th><th>出版社</th><th>出版日期</th><th>价格</th></tr>
+			{% for book in books %}
+			<tr>
+			<th>{{book.ISBN}}</th>
+			<th><a href = "/information/{{book.ISBN}}" >{{book.Title}}</a></th>		
+			<th>{{book.AuthorID.Name}}</th>
+			<th>{{book.Publisher}}</th>
+			<th>{{book.PublishDate}}</th>
+			<th>{{book.Price}}</th>
+			</tr>
+			{% endfor %}
+		</table>
+		{% endif %}
+	</center>
+	</body>
+</html>
+		
